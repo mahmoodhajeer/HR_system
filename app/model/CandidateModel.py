@@ -16,7 +16,7 @@ class CandidateModel():
         return new_candidate
     
     def getall(self):
-        candidates =Candidate.query.all()
+        candidates =Candidate.query.order_by(Candidate.created.desc()).all()
         return candidates
 
   
