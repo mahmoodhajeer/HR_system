@@ -5,6 +5,7 @@ import os, datetime
 
 class ResumeModel(): 
     def uploud(self, file):
+        print(resumes_dir)
         filename = secure_filename(file.filename)
         filename = str(datetime.datetime.now()) + filename
         file.save(os.path.join(resumes_dir, filename))
