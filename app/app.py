@@ -6,5 +6,5 @@ from app.resource.ResumeResource import ResumeResource
 api_bp = Blueprint('api', __name__)
 api = Api(api_bp)
 
-api.add_resource(CandidateResource, '/Candidate')
+api.add_resource(CandidateResource, '/candidate')
 api.add_resource(ResumeResource, '/resume')

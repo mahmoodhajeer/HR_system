@@ -7,7 +7,6 @@ def create_app(config_filename):
     app.config.from_object(config_filename)
     CORS(app)
 
-
     
     
     from app.app import api_bp

@@ -3,6 +3,8 @@ from flask_restful import Resource
 from app.model.CandidateModel import CandidateModel
 from app.model.database import CandidateSchema
 from marshmallow import ValidationError
+from flask_cors import  cross_origin
+
 
 
 
@@ -37,10 +39,10 @@ class CandidateResource(Resource):
         try:
             admin = request.headers['X-ADMIN']
         except :
-            return {'status': 'fail', 'message': 'No input or not supported data provided'},400
+            return {'status': 'fail', 'message': 'No input provided or you have no access for candidates list'},400
         
         if admin != '1':
-            return {'status': 'fail', 'message': 'you have no access for this page'},401
+            return {'status': 'fail', 'message': 'you have no access for candidates list'},401
 
         
         candidate = CandidateModel()
